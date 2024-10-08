@@ -128,49 +128,52 @@ const Home = () => {
             </div>
           </div>
         </section>
-        <section className="countries w-[1300px] mx-auto">
-          <div className="flex flex-col ml-[30px] relative">
-            <h2 className="text-[48px] font-semibold">Countries</h2>
-            <span className="top-[70px] w-[48px] h-[5px] absolute bg-[#FF0000]"></span>
-          </div>
+        <section id="countreies" className="countries w-[1300px] mx-auto">
+  <div className="flex flex-col ml-[30px] relative">
+    <h2 className="text-[48px] font-semibold">Countries</h2>
+    <span className="top-[70px] w-[48px] h-[5px] absolute bg-[#FF0000]"></span>
+  </div>
 
-          <ul className="flex flex-wrap mt-[40px] justify-between gap-[30px]">
-            {[
-              { image: Countries1, name: "Paris", flag: Flag1 },
-              { image: Countries2, name: "Canada", flag: Flag2 },
-              { image: Countries3, name: "usa", flag: Flag3 },
-              { image: Countries4, name: "uk", flag: Flag4 },
-              { image: Countries5, name: "AUSTRALIA", flag: Flag5 },
-              { image: Countries6, name: "NEW ZEALAND", flag: Flag6 },
-              { image: Countries7, name: "JAPAN", flag: Flag7 },
-              { image: Countries8, name: "KOREA", flag: Flag8 },
-              { image: Countries9, name: "Brazil", flag: Flag9 },
-            ].map((country, index) => (
-              <li
-                key={index}
-                className="w-[350px] overflow-hidden h-[282px] uppercase flex flex-col border-b-[4px] shadow-lg relative border-red-500"
-              >
-                <img
-                  src={country.image}
-                  alt={`country${index + 1}`}
-                  className="rounded-tr-[25px] duration-300 max-w-[350px] max-h-[200px] rounded-tl-[25px] "
-                />
-                <div className="bg-white h-[80px]">
-                  <h3 className="mt-[30px] text-[22px] text-center font-semibold">
-                    {country.name}
-                  </h3>
-                  <img
-                    src={country.flag}
-                    alt={`flag${index + 1}`}
-                    height={50}
-                    width={73}
-                    className="absolute w-[73px] h-[50px] bottom-[10px] right-[7px] rounded-[25px]"
-                  />
-                </div>
-              </li>
-            ))}
-          </ul>
-        </section>
+  <ul className="flex flex-wrap mt-[40px] justify-between gap-[30px]">
+    {[
+      { image: Countries1, name: "Paris", flag: Flag1 },
+      { image: Countries2, name: "Canada", flag: Flag2 },
+      { image: Countries3, name: "usa", flag: Flag3 },
+      { image: Countries4, name: "uk", flag: Flag4 },
+      { image: Countries5, name: "AUSTRALIA", flag: Flag5 },
+      { image: Countries6, name: "NEW ZEALAND", flag: Flag6 },
+      { image: Countries7, name: "JAPAN", flag: Flag7 },
+      { image: Countries8, name: "KOREA", flag: Flag8 },
+      { image: Countries9, name: "Brazil", flag: Flag9 },
+    ].map((country, index) => (
+      <li
+        key={index}
+        className="w-[350px] overflow-hidden h-[282px] uppercase flex flex-col border-b-[4px] shadow-lg relative border-red-500 duration-300"
+      >
+        <img
+          src={country.image}
+          alt={`country${index + 1}`}
+          className="rounded-tr-[25px] rounded-tl-[25px] duration-300 max-w-[350px] max-h-[200px] transition-all ease-in-out hover:scale-110 hover:rounded-[25px] active:scale-110 active:rounded-[25px] focus:scale-110 focus:rounded-[25px]"
+        />
+        <div className="bg-white h-[80px]">
+          <h3 className="mt-[30px] text-[22px] text-center font-semibold">
+            {country.name}
+          </h3>
+          <img
+            src={country.flag}
+            alt={`flag${index + 1}`}
+            height={50}
+            width={73}
+            className="absolute w-[73px] h-[50px] bottom-[10px] right-[7px] rounded-[25px]"
+          />
+        </div>
+      </li>
+    ))}
+  </ul>
+</section>
+
+
+
       </main>
     </>
   );
