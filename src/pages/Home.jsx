@@ -87,7 +87,7 @@ const Home = () => {
           </ul>
         </div>
       </header>
-      <main className="w-[1300px] mx-auto">
+      <main>
         <section className="hero h-[100vh]">
           <HeroSwiper />
         </section>
@@ -128,7 +128,7 @@ const Home = () => {
             </div>
           </div>
         </section>
-        <section className="countries">
+        <section className="countries w-[1300px] mx-auto">
           <div className="flex flex-col ml-[30px] relative">
             <h2 className="text-[48px] font-semibold">Countries</h2>
             <span className="top-[70px] w-[48px] h-[5px] absolute bg-[#FF0000]"></span>

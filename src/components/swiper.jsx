@@ -30,7 +30,7 @@ export default function HeroSwiper() {
         </SwiperSlide>
 
         <SwiperSlide className="relative">
-          <div className="hero-back2 w-full h-[100vh] flex justify-center items-center relative">
+          <div className="hero-back2 w-screen h-[100vh] flex justify-center items-center relative">
             <div className="absolute inset-0 bg-black/80 opacity-60"></div> 
             <h1 className="uppercase text-white bg-black/60 text-[50px] rounded-lg text-center max-w-4xl px-4 z-10">
               {t("Reliable visa processing for all countries")}
@@ -39,7 +39,7 @@ export default function HeroSwiper() {
         </SwiperSlide>
 
         <SwiperSlide className="relative">
-          <div className="hero-back3 w-full h-[100vh] flex justify-center items-center relative">
+          <div className="hero-back3 w-screen h-[100vh] flex justify-center items-center relative">
             <div className="absolute inset-0 bg-black/80 opacity-70"></div> 
             <h1 className="uppercase text-white bg-black/60 text-[50px] w-[900px] text-center rounded-lg z-10">
               {t("The best tourist routes at affordable prices")}
