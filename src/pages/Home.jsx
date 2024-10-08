@@ -155,6 +155,7 @@ const Home = () => {
           alt={`country${index + 1}`}
           className="rounded-tr-[25px] rounded-tl-[25px] duration-300 max-w-[350px] max-h-[200px] transition-all ease-in-out hover:scale-110 hover:rounded-[25px] active:scale-110 active:rounded-[25px] focus:scale-110 focus:rounded-[25px]"
         />
+        
         <div className="bg-white h-[80px]">
           <h3 className="mt-[30px] text-[22px] text-center font-semibold">
             {country.name}
