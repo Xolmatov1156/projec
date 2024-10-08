@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.background {
+  background-image: url("./assets/header-bg.png");
+  background-size: 40%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero-back {
+  background-image: url("./assets/spinner.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero-back2 {
+  background-image: url("./assets/hero2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.hero-back3 {
+  background-image: url("./assets/hero3.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.swiper-pagination-bullet-active {
+  background: #49DE80 !important;
+}
+.swiper-pagination-bullet {
+  border: 1.5px solid white !important;
+  scale: 2.0;
+}
+
+.swiper-pagination-bullets
+{
+    display: flex !important;
+    align-items: center !important;
+    padding-bottom: 3rem !important;
+    justify-content: center !important;
+    gap: 1rem !important;
+}
+
+*{
+  scroll-behavior: smooth;
+}
