@@ -1,6 +1,6 @@
 {
     "about":"ABOUT",
-    "countreies":"COUNTRIES",
+    "countries":"Countries",
     "services":"SERVISES",
     "ourworks":"OUR WORKS",
     "contact":"CONTACT",
@@ -17,5 +17,16 @@
     "Indonesia":"Indonesia",
     "about1":"EASY VISA CONSULTING is a rapidly growing company specializing in visa support for travelers. We ensure that your trips are comfortable and worry-free.",
     "about2":"EASY VISA CONSULTING provides visa services for leisure and business trips to the Schengen Area, Canada, the USA, the UK, Japan, and Korea. Our team of experienced professionals ensures a high level of service, allowing you to focus on your travel plans.",
-    "about3":"We are committed to making the visa application process simple and understandable for clients from Uzbekistan, enabling them to easily and quickly access the best travel destinations in the world."
+    "about3":"We are committed to making the visa application process simple and understandable for clients from Uzbekistan, enabling them to easily and quickly access the best travel destinations in the world.",
+    "Paris":"Paris",
+    "Canada":"Canada",
+    "usa":"usa",
+    "uk":"uk",
+    "austraila":"austraila",
+    "new zealand":"zealand",
+    "japan":"japan",
+    "korea":"korea",
+    "Brazil":"Brazil",
+    "Excursion":"Excursion",
+    "Client Reviews":"Client Reviews"
 }

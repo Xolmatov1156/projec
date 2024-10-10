@@ -26,6 +26,15 @@ import Flag6 from "../assets/flag6.png";
 import Flag7 from "../assets/flag7.jpg";
 import Flag8 from "../assets/flag8.jpg";
 import Flag9 from "../assets/flag9.png";
+import Excursion1 from "../assets/tur1.mp4";
+import Excursion2 from "../assets/tur2.mp4";
+import Excursion3 from "../assets/tur3.mp4";
+import Client1 from "../assets/Client-1.mp4";
+import Client2 from "../assets/Client-2.mp4";
+import Client3 from "../assets/Client-3.mp4";
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init();
 
 const Home = () => {
   const { t, i18n } = useTranslation();
@@ -38,22 +47,22 @@ const Home = () => {
     <>
       <header className=" bg-white z-20 top-0 left-0 px-[210px] right-0  background fixed  mx-auto ">
         <div className="max-w-[1300px] mx-auto h-[80px] flex items-center justify-between">
-          <img src={Logo} alt="logo" className="w-[80px] md:w-[100px] h-auto" />
+          <img src={Logo} alt="logo" className="w-[80px] md:w-[100px] h-[58px]" />
           <ul className="flex space-x-[15px] md:space-x-[25px] text-[12px] md:text-[14px] font-bold uppercase">
-            <li className="hover:text-red-500 hover:border-b-[2px] hover:border-red-500 duration-300 cursor-pointer">
+            <li className="hover:text-red-500 hover:border-b-[2px] border-b-[2px] hover:border-red-500 duration-300 cursor-pointer">
               <a href="#about">{t("about")}</a>
             </li>
-            <li className="hover:text-red-500 hover:border-b-[2px] hover:border-red-500 duration-300 cursor-pointer">
-              <a href="#countreies">{t("countreies")}</a>
+            <li className="hover:text-red-500 hover:border-b-[2px] hover:border-red-500 duration-300 cursor-pointer uppercase">
+              <a href="#countreies">{t("countries")}</a>
             </li>
             <li className="hover:text-red-500 hover:border-b-[2px] hover:border-red-500 duration-300 cursor-pointer">
-              <a href="services">{t("services")}</a>
+              <a href="#services">{t("services")}</a>
             </li>
             <li className="hover:text-red-500 hover:border-b-[2px] hover:border-red-500 duration-300 cursor-pointer">
-              <a href="ourworks">{t("ourworks")}</a>
+              <a href="#ourworks">{t("ourworks")}</a>
             </li>
             <li className="hover:text-red-500 hover:border-b-[2px] hover:border-red-500 duration-300 cursor-pointer">
-              <a href="contact">{t("contact")}</a>
+              <a href="#contact">{t("contact")}</a>
             </li>
             <div className="flex space-x-[10px] md:space-x-[20px]">
               <button onClick={() => changeLanguage("uz")}>
@@ -91,9 +100,11 @@ const Home = () => {
         <section className="hero h-[100vh]">
           <HeroSwiper />
         </section>
-        <section className="popular w-[1300px] h-[385px] mx-auto">
+        <section className="popular  w-[1300px] h-[385px] mx-auto">
           <div className="flex flex-col ml-[30px] relative mt-[65px]">
-            <h2 className=" text-[48px] font-semibold">{t("Populars")}</h2>
+            <h2 data-aos="fade-right" data-aos-duration="500" className=" text-[48px] font-semibold">
+              {t("Populars")}
+            </h2>
             <span className="top-[70px] w-[48px] h-[5px] absolute bg-[#FF0000]"></span>
           </div>
           <SwiperDemo />
@@ -103,7 +114,11 @@ const Home = () => {
           className="about h-[700px] mt-[76px] w-[1300px] mx-auto"
         >
           <div className="flex space-x-[100px]">
-            <div className="w-[580px] relative">
+            <div
+              data-aos="fade-up"
+              data-aos-duration="500"
+              className="w-[580px] relative"
+            >
               <div className="w-[508px] h-[2px] absolute bg-[#FF0000]"></div>
               <div className="flex flex-col relative pt-[62px] mb-[32px]">
                 <h2 className="text-[48px] font-semibold">{t("about")}</h2>
@@ -118,7 +133,12 @@ const Home = () => {
               </p>
               <div className="w-[508px] h-[2px] absolute bg-[#FF0000] mt-[64px]"></div>
             </div>
-            <div className="relative">
+            <div
+              data-aos="fade-down"
+              data-aos-easing="linear"
+              data-aos-duration="500"
+              className="relative"
+            >
               <img src={About} alt="about" className="rounded-lg" />
               <img
                 src={Logo}
@@ -129,52 +149,109 @@ const Home = () => {
           </div>
         </section>
         <section id="countreies" className="countries w-[1300px] mx-auto">
-  <div className="flex flex-col ml-[30px] relative">
-    <h2 className="text-[48px] font-semibold">Countries</h2>
-    <span className="top-[70px] w-[48px] h-[5px] absolute bg-[#FF0000]"></span>
-  </div>
+          <div className="flex flex-col ml-[30px] relative">
+            <h2 data-aos="fade-right" className="text-[48px] font-semibold">{t("countries")}</h2>
+            <span className="top-[70px] w-[48px] h-[5px] absolute bg-[#FF0000]"></span>
+          </div>
 
-  <ul className="flex flex-wrap mt-[40px] justify-between gap-[30px]">
-    {[
-      { image: Countries1, name: "Paris", flag: Flag1 },
-      { image: Countries2, name: "Canada", flag: Flag2 },
-      { image: Countries3, name: "usa", flag: Flag3 },
-      { image: Countries4, name: "uk", flag: Flag4 },
-      { image: Countries5, name: "AUSTRALIA", flag: Flag5 },
-      { image: Countries6, name: "NEW ZEALAND", flag: Flag6 },
-      { image: Countries7, name: "JAPAN", flag: Flag7 },
-      { image: Countries8, name: "KOREA", flag: Flag8 },
-      { image: Countries9, name: "Brazil", flag: Flag9 },
-    ].map((country, index) => (
-      <li
-        key={index}
-        className="w-[350px] overflow-hidden h-[282px] uppercase flex flex-col border-b-[4px] shadow-lg relative border-red-500 duration-300"
-      >
-        <img
-          src={country.image}
-          alt={`country${index + 1}`}
-          className="rounded-tr-[25px] rounded-tl-[25px] duration-300 max-w-[350px] max-h-[200px] transition-all ease-in-out hover:scale-110 hover:rounded-[25px] active:scale-110 active:rounded-[25px] focus:scale-110 focus:rounded-[25px]"
-        />
-        
-        <div className="bg-white h-[80px]">
-          <h3 className="mt-[30px] text-[22px] text-center font-semibold">
-            {country.name}
-          </h3>
-          <img
-            src={country.flag}
-            alt={`flag${index + 1}`}
-            height={50}
-            width={73}
-            className="absolute w-[73px] h-[50px] bottom-[10px] right-[7px] rounded-[25px]"
-          />
+          <ul className="flex flex-wrap mt-[40px] justify-between gap-[30px]">
+            {[
+              { image: Countries1, name: t("Paris"), flag: Flag1 },
+              { image: Countries2, name: t("Canada"), flag: Flag2 },
+              { image: Countries3, name: t("usa"), flag: Flag3 },
+              { image: Countries4, name: t("uk"), flag: Flag4 },
+              { image: Countries5, name: t("austraila"), flag: Flag5 },
+              { image: Countries6, name: t("new zealand"), flag: Flag6 },
+              { image: Countries7, name: t("japan"), flag: Flag7 },
+              { image: Countries8, name: t("korea"), flag: Flag8 },
+              { image: Countries9, name: t("Brazil"), flag: Flag9 },
+            ].map((country, index) => (
+              <li
+                key={index}
+                data-aos="zoom-in"
+                data-aos-duration="500"
+                className="w-[350px] overflow-hidden h-[282px] rounded-tr-[25px] rounded-tl-[25px] uppercase flex flex-col border-b-[4px] shadow-lg relative border-red-500 duration-300"
+              >
+                <div className="w-full h-[200px] overflow-hidden">
+                  <img
+                    src={country.image}
+                    alt={`country${index + 1}`}
+                    className="rounded-tr-[25px] rounded-tl-[25px] duration-500 w-[350px] h-[200px] transition-all ease-in-out hover:scale-150 hover:rounded-[25px]"
+                  />
+                </div>
+
+                <div className="bg-white h-[80px] flex items-center justify-center gap-[20px]">
+                  <h3 className="text-[22px] text-center font-semibold">
+                  {t(country.name)}
+                  </h3>
+                  <img
+                    src={country.flag}
+                    alt={`flag${index + 1}`}
+                    height={50}
+                    width={73}
+                    className=" w-[73px] absolute right-[5px] h-[50px] shadow-md shadow-black text-end rounded-[25px]"
+                  />
+                </div>
+              </li>
+            ))}
+          </ul>
+        </section>
+        <section id="ourworks" className="excursion w-[1300px] mx-auto mt-[62px]">
+        <div>
+        <div className="flex flex-col relative">
+            <h2 data-aos="fade-right" className="text-[48px] font-semibold">{t("Excursion")}</h2>
+            <span className="top-[70px] w-[48px] h-[5px] absolute bg-[#FF0000]"></span>
+          </div>
+          <div className="mt-[30px] ml-[87px] flex gap-[122px]">
+          <div data-aos="zoom-out-up" data-aos-duration="600" className="relative w-[300px]">
+          <video className="w-[300px] h-[400px] object-cover rounded-lg" controls>
+        <source src={Excursion1} type="video/mp4" />
+      </video>
+      <img src={Logo} alt='logo' className="w-[100px] h-[58px] absolute bottom-[370px] right-[230px]"  />                   
+          </div>
+          <div data-aos="zoom-out-up" data-aos-duration="600" className="relative w-[300px]">
+          <video className="w-[300px] h-[400px] object-cover rounded-lg" controls>
+        <source src={Excursion2} type="video/mp4" />
+      </video>
+      <img src={Logo} alt='logo' className="w-[100px] h-[58px] absolute bottom-[370px] right-[230px]"  />                   
+          </div>
+          <div data-aos="zoom-out-up" data-aos-duration="600" className="relative w-[300px]">
+          <video className="w-[300px] h-[400px] object-cover rounded-lg" controls>
+        <source src={Excursion3} type="video/mp4" />
+      </video>
+      <img src={Logo} alt='logo' className="w-[100px] h-[58px] absolute bottom-[370px] right-[230px]"  />                   
+          </div>
+          </div>
         </div>
-      </li>
-    ))}
-  </ul>
-</section>
-
-
-
+        </section>
+        <section  className="client w-[1300px] mx-auto mt-[62px]">
+        <div>
+        <div className="flex flex-col relative">
+            <h2 data-aos="fade-right" className="text-[48px] font-semibold">{t("Client Reviews")}</h2>
+            <span className="top-[70px] w-[48px] h-[5px] absolute bg-[#FF0000]"></span>
+          </div>
+          <div className="mt-[30px] ml-[87px] flex gap-[122px]">
+          <div  data-aos="zoom-out-up" data-aos-duration="600" className="relative w-[300px]">
+          <video className="w-[300px] h-[400px] object-cover rounded-lg" controls>
+        <source src={Client1} type="video/mp4" />
+      </video>
+      <img src={Logo} alt='logo' className="w-[100px] h-[58px] absolute bottom-[370px] right-[230px]"  />                   
+          </div>
+          <div data-aos="zoom-out-up" data-aos-duration="600" className="relative w-[300px]">
+          <video className="w-[300px] h-[400px] object-cover rounded-lg" controls>
+        <source src={Client2} type="video/mp4" />
+      </video>
+      <img src={Logo} alt='logo' className="w-[100px] h-[58px] absolute bottom-[370px] right-[230px]"  />                   
+          </div>
+          <div data-aos="zoom-out-up" data-aos-duration="600" className="relative w-[300px]">
+          <video className="w-[300px] h-[400px] object-cover rounded-lg" controls>
+        <source src={Client3} type="video/mp4" />
+      </video>
+      <img src={Logo} alt='logo' className="w-[100px] h-[58px] absolute bottom-[370px] right-[230px]"  />                   
+          </div>
+          </div>
+        </div>
+        </section>
       </main>
     </>
   );

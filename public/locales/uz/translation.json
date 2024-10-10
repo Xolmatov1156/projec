@@ -1,6 +1,6 @@
 {
     "about": "Biz haqimizda",
-    "countreies": "Mamlakatlar",
+    "countries": "Mamlakatlar",
     "services": "Xizmatlar",
     "ourworks": "Ishlarimiz",
     "contact": "Aloqa",
@@ -17,5 +17,16 @@
     "Indonesia":"Indoneziya",
     "about1":"EASY VISA CONSULTING – sayohatchilar uchun visa ko‘mak berishga ixtisoslashgan tez o‘sayotgan kompaniya. Biz sizning sayohatlaringizni qulay va bezovta qilmaydigan qilishga e'tibor qaratamiz.",
     "about2":"EASY VISA CONSULTING ta'til va biznes safarlari uchun Shengen, Kanada, AQSH, Buyuk Britaniya, Yaponiya va Koreyaga visa rasmiylashtirish xizmatlarini taqdim etadi. Tajribali mutaxassislardan iborat jamoamiz yuqori xizmat darajasini ta'minlaydi, shunda siz sayohat rejalaringizga e'tibor qaratishingiz mumkin.",
-    "about3":"Biz O‘zbekistonlik mijozlar uchun visa olish jarayonini oddiy va tushunarli qilishga qaratilganmiz, shunda ularga dunyoning eng yaxshi sayohat manzillariga oson va tez kirish imkonini beramiz."
+    "about3":"Biz O‘zbekistonlik mijozlar uchun visa olish jarayonini oddiy va tushunarli qilishga qaratilganmiz, shunda ularga dunyoning eng yaxshi sayohat manzillariga oson va tez kirish imkonini beramiz.",
+    "Paris":"Parij",
+    "Canada":"Kanada",
+    "usa":"AQSh",
+    "uk":"Britaniya",
+    "austraila":"avstraliya",
+    "new zealand":"Zelandiya",
+    "japan":"Yaponiya",
+    "korea":"koreya",
+    "Brazil":"Braziliya",
+    "Excursion":"Sayohat",
+    "Client Reviews":"Mijozlar Sharhlari"
 }
