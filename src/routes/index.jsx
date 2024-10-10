@@ -16,7 +16,7 @@ const CustomRoute = () => {
         element={
           <Suspense
             fallback={
-                <video className="relative top-0 left-0  w-[100%] h-[100vh] bg-black" autoPlay muted loop src={Video} >
+                <video className="relative top-0 left-0  w-[100%] h-[100vh] object-cover" autoPlay muted loop src={Video} >
                   
                 </video>
             }

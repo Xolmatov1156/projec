@@ -49,3 +49,28 @@
 *{
   scroll-behavior: smooth;
 }
+
+.priorities {
+  background-image: url("./assets/turizm-bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.time{
+  background-image: url("./assets/numbers-bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.travels {
+  background-image: url("./assets/Background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.swiper-slide {
+  display: flex;
+  flex-direction: column;
+}

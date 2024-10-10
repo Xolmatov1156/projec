@@ -32,8 +32,15 @@ import Excursion3 from "../assets/tur3.mp4";
 import Client1 from "../assets/Client-1.mp4";
 import Client2 from "../assets/Client-2.mp4";
 import Client3 from "../assets/Client-3.mp4";
+import Prioritet1 from "../assets/prioritet-1.webp";
+import Prioritet2 from "../assets/prioritet-2.svg";
+import Prioritet3 from "../assets/prioritet-3.svg";
+import Prioritet4 from "../assets/prioritet-4.svg";
+import SlotCounter from "react-slot-counter";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import BasicTabs from "../components/Tabs";
+import FooterSwiper from "../components/footer";
 AOS.init();
 
 const Home = () => {
@@ -47,7 +54,11 @@ const Home = () => {
     <>
       <header className=" bg-white z-20 top-0 left-0 px-[210px] right-0  background fixed  mx-auto ">
         <div className="max-w-[1300px] mx-auto h-[80px] flex items-center justify-between">
-          <img src={Logo} alt="logo" className="w-[80px] md:w-[100px] h-[58px]" />
+          <img
+            src={Logo}
+            alt="logo"
+            className="w-[80px] md:w-[100px] h-[58px]"
+          />
           <ul className="flex space-x-[15px] md:space-x-[25px] text-[12px] md:text-[14px] font-bold uppercase">
             <li className="hover:text-red-500 hover:border-b-[2px] border-b-[2px] hover:border-red-500 duration-300 cursor-pointer">
               <a href="#about">{t("about")}</a>
@@ -101,8 +112,11 @@ const Home = () => {
           <HeroSwiper />
         </section>
         <section className="popular  w-[1300px] h-[385px] mx-auto">
-          <div className="flex flex-col ml-[30px] relative mt-[65px]">
-            <h2 data-aos="fade-right" data-aos-duration="500" className=" text-[48px] font-semibold">
+          <div
+            data-aos="fade-right"
+            className="flex flex-col ml-[30px] relative mt-[65px]"
+          >
+            <h2 data-aos-duration="500" className=" text-[48px] font-semibold">
               {t("Populars")}
             </h2>
             <span className="top-[70px] w-[48px] h-[5px] absolute bg-[#FF0000]"></span>
@@ -149,8 +163,11 @@ const Home = () => {
           </div>
         </section>
         <section id="countreies" className="countries w-[1300px] mx-auto">
-          <div className="flex flex-col ml-[30px] relative">
-            <h2 data-aos="fade-right" className="text-[48px] font-semibold">{t("countries")}</h2>
+          <div
+            data-aos="fade-right"
+            className="flex flex-col ml-[30px] relative"
+          >
+            <h2 className="text-[48px] font-semibold">{t("countries")}</h2>
             <span className="top-[70px] w-[48px] h-[5px] absolute bg-[#FF0000]"></span>
           </div>
 
@@ -182,7 +199,7 @@ const Home = () => {
 
                 <div className="bg-white h-[80px] flex items-center justify-center gap-[20px]">
                   <h3 className="text-[22px] text-center font-semibold">
-                  {t(country.name)}
+                    {t(country.name)}
                   </h3>
                   <img
                     src={country.flag}
@@ -196,61 +213,232 @@ const Home = () => {
             ))}
           </ul>
         </section>
-        <section id="ourworks" className="excursion w-[1300px] mx-auto mt-[62px]">
-        <div>
-        <div className="flex flex-col relative">
-            <h2 data-aos="fade-right" className="text-[48px] font-semibold">{t("Excursion")}</h2>
-            <span className="top-[70px] w-[48px] h-[5px] absolute bg-[#FF0000]"></span>
+        <section
+          id="ourworks"
+          className="excursion w-[1300px] mx-auto mt-[62px]"
+        >
+          <div>
+            <div data-aos="fade-right" className="flex flex-col relative">
+              <h2 className="text-[48px] font-semibold">{t("Excursion")}</h2>
+              <span className="top-[70px] w-[48px] h-[5px] absolute bg-[#FF0000]"></span>
+            </div>
+            <div className="mt-[30px] ml-[87px] flex gap-[122px]">
+              <div
+                data-aos="zoom-out-up"
+                data-aos-duration="600"
+                className="relative w-[300px]"
+              >
+                <video
+                  className="w-[300px] h-[400px] object-cover rounded-lg"
+                  controls
+                >
+                  <source src={Excursion1} type="video/mp4" />
+                </video>
+                <img
+                  src={Logo}
+                  alt="logo"
+                  className="w-[100px] h-[58px] absolute bottom-[370px] right-[230px]"
+                />
+              </div>
+              <div
+                data-aos="zoom-out-up"
+                data-aos-duration="600"
+                className="relative w-[300px]"
+              >
+                <video
+                  className="w-[300px] h-[400px] object-cover rounded-lg"
+                  controls
+                >
+                  <source src={Excursion2} type="video/mp4" />
+                </video>
+                <img
+                  src={Logo}
+                  alt="logo"
+                  className="w-[100px] h-[58px] absolute bottom-[370px] right-[230px]"
+                />
+              </div>
+              <div
+                data-aos="zoom-out-up"
+                data-aos-duration="600"
+                className="relative w-[300px]"
+              >
+                <video
+                  className="w-[300px] h-[400px] object-cover rounded-lg"
+                  controls
+                >
+                  <source src={Excursion3} type="video/mp4" />
+                </video>
+                <img
+                  src={Logo}
+                  alt="logo"
+                  className="w-[100px] h-[58px] absolute bottom-[370px] right-[230px]"
+                />
+              </div>
+            </div>
           </div>
-          <div className="mt-[30px] ml-[87px] flex gap-[122px]">
-          <div data-aos="zoom-out-up" data-aos-duration="600" className="relative w-[300px]">
-          <video className="w-[300px] h-[400px] object-cover rounded-lg" controls>
-        <source src={Excursion1} type="video/mp4" />
-      </video>
-      <img src={Logo} alt='logo' className="w-[100px] h-[58px] absolute bottom-[370px] right-[230px]"  />                   
-          </div>
-          <div data-aos="zoom-out-up" data-aos-duration="600" className="relative w-[300px]">
-          <video className="w-[300px] h-[400px] object-cover rounded-lg" controls>
-        <source src={Excursion2} type="video/mp4" />
-      </video>
-      <img src={Logo} alt='logo' className="w-[100px] h-[58px] absolute bottom-[370px] right-[230px]"  />                   
-          </div>
-          <div data-aos="zoom-out-up" data-aos-duration="600" className="relative w-[300px]">
-          <video className="w-[300px] h-[400px] object-cover rounded-lg" controls>
-        <source src={Excursion3} type="video/mp4" />
-      </video>
-      <img src={Logo} alt='logo' className="w-[100px] h-[58px] absolute bottom-[370px] right-[230px]"  />                   
-          </div>
-          </div>
-        </div>
         </section>
-        <section  className="client w-[1300px] mx-auto mt-[62px]">
-        <div>
-        <div className="flex flex-col relative">
-            <h2 data-aos="fade-right" className="text-[48px] font-semibold">{t("Client Reviews")}</h2>
-            <span className="top-[70px] w-[48px] h-[5px] absolute bg-[#FF0000]"></span>
+        <section className="client w-[1300px] mx-auto mt-[62px]">
+          <div>
+            <div data-aos="fade-right" className="flex flex-col relative">
+              <h2 className="text-[48px] font-semibold">
+                {t("Client Reviews")}
+              </h2>
+              <span className="top-[70px] w-[48px] h-[5px] absolute bg-[#FF0000]"></span>
+            </div>
+            <div className="mt-[30px] ml-[87px] flex gap-[122px]">
+              <div
+                data-aos="zoom-out-up"
+                data-aos-duration="600"
+                className="relative w-[300px]"
+              >
+                <video
+                  className="w-[300px] h-[400px] object-cover rounded-lg"
+                  controls
+                >
+                  <source src={Client1} type="video/mp4" />
+                </video>
+                <img
+                  src={Logo}
+                  alt="logo"
+                  className="w-[100px] h-[58px] absolute bottom-[370px] right-[230px]"
+                />
+              </div>
+              <div
+                data-aos="zoom-out-up"
+                data-aos-duration="600"
+                className="relative w-[300px]"
+              >
+                <video
+                  className="w-[300px] h-[400px] object-cover rounded-lg"
+                  controls
+                >
+                  <source src={Client2} type="video/mp4" />
+                </video>
+                <img
+                  src={Logo}
+                  alt="logo"
+                  className="w-[100px] h-[58px] absolute bottom-[370px] right-[230px]"
+                />
+              </div>
+              <div
+                data-aos="zoom-out-up"
+                data-aos-duration="600"
+                className="relative w-[300px]"
+              >
+                <video
+                  className="w-[300px] h-[400px] object-cover rounded-lg"
+                  controls
+                >
+                  <source src={Client3} type="video/mp4" />
+                </video>
+                <img
+                  src={Logo}
+                  alt="logo"
+                  className="w-[100px] h-[58px] absolute bottom-[370px] right-[230px]"
+                />
+              </div>
+            </div>
           </div>
-          <div className="mt-[30px] ml-[87px] flex gap-[122px]">
-          <div  data-aos="zoom-out-up" data-aos-duration="600" className="relative w-[300px]">
-          <video className="w-[300px] h-[400px] object-cover rounded-lg" controls>
-        <source src={Client1} type="video/mp4" />
-      </video>
-      <img src={Logo} alt='logo' className="w-[100px] h-[58px] absolute bottom-[370px] right-[230px]"  />                   
+        </section>
+        <section className="priorities w-screen text-center h-[780px] mb-[200px] mt-[70px]">
+          <div data-aos="fade-down">
+            <h2 className="pt-[77px] text-[55px] text-white font-semibold">
+              Priorities in Tourism and Visas
+            </h2>
+            <div className="w-[48px] h-[4px] bg-[#FF0000] mx-auto"></div>
+            <div className="pt-[15px] text-white w-[934px] text-[17px] font-semibold mx-auto">
+              <p>
+                We provide a high level of service and reliability in obtaining
+                tourist visas. Our team has experience in the tourism industry
+                and is ready to quickly resolve issues related to obtaining
+                visas. We strive to make our clients' travels comfortable and
+                carefree, providing support at every stage—from choosing a visa
+                to obtaining documentation.
+              </p>
+            </div>
           </div>
-          <div data-aos="zoom-out-up" data-aos-duration="600" className="relative w-[300px]">
-          <video className="w-[300px] h-[400px] object-cover rounded-lg" controls>
-        <source src={Client2} type="video/mp4" />
-      </video>
-      <img src={Logo} alt='logo' className="w-[100px] h-[58px] absolute bottom-[370px] right-[230px]"  />                   
+          <div
+            data-aos="fade-up"
+            className="w-[1260px] flex justify-between mx-auto mt-[80px] text-white"
+          >
+            <div className="flex flex-col gap-[20px] text-[18px] font-semibold">
+              <img
+                src={Prioritet1}
+                alt="Prioritet1"
+                className="w-[135px] h-[135px]"
+              />
+              <p>Saving Your Time</p>
+            </div>
+            <div className="flex flex-col gap-[20px] text-[18px] font-semibold">
+              <img
+                src={Prioritet2}
+                alt="Prioritet1"
+                className="w-[135px] h-[135px]"
+              />
+              <p>Reliability</p>
+            </div>
+            <div className="flex flex-col gap-[20px] text-[18px] font-semibold">
+              <img
+                src={Prioritet3}
+                alt="Prioritet1"
+                className="w-[135px] h-[135px]"
+              />
+              <p>Support</p>
+            </div>
+            <div className="flex flex-col gap-[20px] text-[18px] font-semibold">
+              <img
+                src={Prioritet4}
+                alt="Prioritet1"
+                className="w-[135px] h-[135px]"
+              />
+              <p>Convenience</p>
+            </div>
           </div>
-          <div data-aos="zoom-out-up" data-aos-duration="600" className="relative w-[300px]">
-          <video className="w-[300px] h-[400px] object-cover rounded-lg" controls>
-        <source src={Client3} type="video/mp4" />
-      </video>
-      <img src={Logo} alt='logo' className="w-[100px] h-[58px] absolute bottom-[370px] right-[230px]"  />                   
+          <div className="mt-[100px] w-[975px] text-white  h-[345px] mx-auto time rounded-[25px]">
+            <div data-aos="fade-up">
+              <h2 className="pt-[52px] text-[50px] font-semibold">
+                We in Numbers
+              </h2>
+              <div className="w-[48px] h-[4px] bg-white flex justify-center  mx-auto"></div>
+              <div className="flex w-[970px] justify-around gap-[20px]">
+                <div className="flex flex-col">
+                  <div
+                    data-aos="zoom-in"
+                    className="text-[100px] font-semibold"
+                  >
+                    <SlotCounter value={7320} />
+                  </div>
+                  <p className="text-[20px] font-semibold">Issued Visas</p>
+                </div>
+                <div>
+                  <div
+                    data-aos="zoom-in"
+                    className="text-[100px] font-semibold"
+                  >
+                    <SlotCounter value={7320} />
+                  </div>
+                  <p className="text-[20px] font-semibold">Successful Trips</p>
+                </div>
+                <div>
+                  <div
+                    data-aos="zoom-in"
+                    className="text-[100px] font-semibold"
+                  >
+                    <SlotCounter value={7320} />
+                  </div>
+                  <p className="text-[20px] font-semibold">Satisfied Clients</p>
+                </div>
+              </div>
+            </div>
           </div>
+        </section>
+        <section data-aos="zoom-in" className="w-[1200px] mx-auto mb-[80px]">
+        <BasicTabs/>
+        </section>
+        <section className="travels h-[960px] w-[screen]">
+          <div className="w-[1300px] mx-auto">
+          <FooterSwiper/>
           </div>
-        </div>
         </section>
       </main>
     </>
