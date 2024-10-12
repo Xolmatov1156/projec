@@ -40,11 +40,35 @@ import SlotCounter from "react-slot-counter";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import BasicTabs from "../components/Tabs";
-import FooterSwiper from "../components/footer";
+import TravelsSwiper from "../components/travels-swiper";
+import Location from "../assets/location.svg";
+import Group from "../assets/group.svg";
+import Instagram from "../assets/instagram.webp";
+import Telegram from "../assets/telegram.webp";
+import axios from "axios";
 AOS.init();
 
 const Home = () => {
   const { t, i18n } = useTranslation();
+
+  const SendMessage = (e) => {
+    e.preventDefault();
+    const { name, surname, phone, comment } = e.target.elements;
+    console.log(name.value, surname.value, phone.value, comment.value);
+    let TOKEN = "7518121126:AAEbXnVT1vRJX2AdvVx_cBHKHx7PmIoOLic";
+    let CHAT_ID = "-1002446413525";
+    let URL = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
+    let message = `<b>Example:</b>\n`;
+    message += `<b>Name: ${name.value} </b>\n`;
+    message += `<b>Sur Name: ${surname.value}</b>\n`;
+    message += `<b>Phone: ${phone.value}</b>\n`;
+    message += `<b>comment: ${comment.value}</b>\n`;
+    axios.post(`${URL}`, {
+      chat_id: CHAT_ID,
+      text: message,
+      parse_mode: "HTML",
+    }).then(res => console.log(res)).catch(err => console.log(err));
+  };
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
@@ -66,7 +90,7 @@ const Home = () => {
             <li className="hover:text-red-500 hover:border-b-[2px] hover:border-red-500 duration-300 cursor-pointer uppercase">
               <a href="#countreies">{t("countries")}</a>
             </li>
-            <li className="hover:text-red-500 hover:border-b-[2px] hover:border-red-500 duration-300 cursor-pointer">
+            <li className="hover:text-red-500 hover:border-b-[2px] uppercase hover:border-red-500 duration-300 cursor-pointer">
               <a href="#services">{t("services")}</a>
             </li>
             <li className="hover:text-red-500 hover:border-b-[2px] hover:border-red-500 duration-300 cursor-pointer">
@@ -343,18 +367,11 @@ const Home = () => {
         <section className="priorities w-screen text-center h-[780px] mb-[200px] mt-[70px]">
           <div data-aos="fade-down">
             <h2 className="pt-[77px] text-[55px] text-white font-semibold">
-              Priorities in Tourism and Visas
+              {t("Priorities")}
             </h2>
             <div className="w-[48px] h-[4px] bg-[#FF0000] mx-auto"></div>
             <div className="pt-[15px] text-white w-[934px] text-[17px] font-semibold mx-auto">
-              <p>
-                We provide a high level of service and reliability in obtaining
-                tourist visas. Our team has experience in the tourism industry
-                and is ready to quickly resolve issues related to obtaining
-                visas. We strive to make our clients' travels comfortable and
-                carefree, providing support at every stage—from choosing a visa
-                to obtaining documentation.
-              </p>
+              <p>{t("Priorities_text")}</p>
             </div>
           </div>
           <div
@@ -367,7 +384,7 @@ const Home = () => {
                 alt="Prioritet1"
                 className="w-[135px] h-[135px]"
               />
-              <p>Saving Your Time</p>
+              <p>{t("Priorities1")}</p>
             </div>
             <div className="flex flex-col gap-[20px] text-[18px] font-semibold">
               <img
@@ -375,7 +392,7 @@ const Home = () => {
                 alt="Prioritet1"
                 className="w-[135px] h-[135px]"
               />
-              <p>Reliability</p>
+              <p>{t("Priorities2")}</p>
             </div>
             <div className="flex flex-col gap-[20px] text-[18px] font-semibold">
               <img
@@ -383,7 +400,7 @@ const Home = () => {
                 alt="Prioritet1"
                 className="w-[135px] h-[135px]"
               />
-              <p>Support</p>
+              <p>{t("Priorities3")}</p>
             </div>
             <div className="flex flex-col gap-[20px] text-[18px] font-semibold">
               <img
@@ -391,13 +408,13 @@ const Home = () => {
                 alt="Prioritet1"
                 className="w-[135px] h-[135px]"
               />
-              <p>Convenience</p>
+              <p>{t("Priorities4")}</p>
             </div>
           </div>
           <div className="mt-[100px] w-[975px] text-white  h-[345px] mx-auto time rounded-[25px]">
             <div data-aos="fade-up">
               <h2 className="pt-[52px] text-[50px] font-semibold">
-                We in Numbers
+                {t("We in Numbers")}
               </h2>
               <div className="w-[48px] h-[4px] bg-white flex justify-center  mx-auto"></div>
               <div className="flex w-[970px] justify-around gap-[20px]">
@@ -408,39 +425,152 @@ const Home = () => {
                   >
                     <SlotCounter value={7320} />
                   </div>
-                  <p className="text-[20px] font-semibold">Issued Visas</p>
+                  <p className="text-[20px] font-semibold">
+                    {t("Issued Visas")}
+                  </p>
                 </div>
                 <div>
                   <div
                     data-aos="zoom-in"
                     className="text-[100px] font-semibold"
                   >
-                    <SlotCounter value={7320} />
+                    <SlotCounter value={7257} />
                   </div>
-                  <p className="text-[20px] font-semibold">Successful Trips</p>
+                  <p className="text-[20px] font-semibold">
+                    {t("Successful Trips")}
+                  </p>
                 </div>
                 <div>
                   <div
                     data-aos="zoom-in"
                     className="text-[100px] font-semibold"
                   >
-                    <SlotCounter value={7320} />
+                    <SlotCounter value={7250} />
                   </div>
-                  <p className="text-[20px] font-semibold">Satisfied Clients</p>
+                  <p className="text-[20px] font-semibold">
+                    {t("Satisfied Clients")}
+                  </p>
                 </div>
               </div>
             </div>
           </div>
         </section>
         <section data-aos="zoom-in" className="w-[1200px] mx-auto mb-[80px]">
-        <BasicTabs/>
+          <BasicTabs />
         </section>
-        <section className="travels h-[960px] w-[screen]">
+        <section className="travels h-[960px] w-[screen] bg-black">
           <div className="w-[1300px] mx-auto">
-          <FooterSwiper/>
+            <TravelsSwiper />
           </div>
         </section>
       </main>
+      <footer className="w-screen h-[814px] bg-black pt-[50px]">
+        <div className="w-[1300px] h-[650px] mx-auto flex gap-[85px]">
+          <div className="flex flex-col text-white">
+            <div data-aos="fade-right" className="flex flex-col relative">
+              <h2 className="text-[48px] font-semibold">Contact</h2>
+              <span className="top-[70px] w-[48px] h-[5px] absolute bg-[#FF0000]"></span>
+            </div>
+            <h3 className="mt-[35px]">For Contact:</h3>
+            <a href="tel:" className="mt-[15px]">
+              +998 99 712 66 66
+            </a>
+            <a href="tel:">+998 97 483 99 99</a>
+            <div className="flex gap-[20px] flex-col mt-[35px]">
+              <h3>Social media</h3>
+              <a
+                target="_blank"
+                href="https://www.instagram.com/easy.visa.uzb/?igsh=aXI4bG9mMm5sczZ3&utm_source=qr"
+                className="flex gap-[5px] hover:text-red-500"
+              >
+                <img src={Instagram} alt="loca" className="w-[30px] h-[30px]" />
+                easy.visa.uzb
+              </a>
+              <div className="flex items-center gap-[5px]">
+                <img
+                  src={Telegram}
+                  alt="telegram"
+                  className="w-[30px] h-[30px]"
+                />
+                <div className="flex flex-col">
+                  <a target="_blank" href="https://t.me/Ataev_Bakhodir90">
+                    t.me/Ataev_Bakhodir90
+                  </a>
+                  <a target="_blank" href="https://t.me/sevaraataeva1986">
+                    t.me/sevaraataeva1986
+                  </a>
+                </div>
+              </div>
+              <a
+                href="https://t.me/easyvizatourconsulting"
+                target="_blank"
+                className="flex items-center gap-[5px] hover:text-red-500"
+              >
+                <img src={Group} alt="loca" className="w-[35px] h-[35px]" />
+                Telegram
+              </a>
+              <div className="flex items-center gap-[5px] hover:text-red-500">
+                <img src={Location} alt="loca" className="w-[35px] h-[35px]" />
+                Tashkent, Mustaqillik 59.
+              </div>
+            </div>
+          </div>
+          <div>
+            <iframe
+              className="rounded-md"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3025.12897814137!2d69.67134522515748!3d41.151268931814066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38afb2d4577a4a75%3A0x79d9d2c0e3535831!2z0YPQuy4g0JzRg9GB0YLQsNC60LjQu9C70LjQuiA1OSwgMTEwMjI2LCDQmtGA0LDRgdC90L7Qs9C-0YDRgdC6LCDQotCw0YjQutC10L3RgtGB0LrQsNGPINC-0LHQu9Cw0YHRgtGMLCDQo9C30LHQtdC60LjRgdGC0LDQvQ!5e0!3m2!1sru!2s!4v1728709767193!5m2!1sru!2s"
+              width="500"
+              height="500"
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+          <div>
+            <h2 className="text-[38px] text-white font-semibold">
+              Submit a request
+            </h2>
+            <form onSubmit={SendMessage} className="mt-[20px]">
+              <div className="flex flex-col gap-[24px] w-[350px]">
+                <input
+                  type="text"
+                  required
+                  name="name"
+                  placeholder="Name"
+                  className="h-[44px] text-[#D5192F] caret-red-500 outline-none px-[20px] w-full rounded-md"
+                />
+                <input
+                  type="text"
+                  required
+                  name="surname"
+                  placeholder="Surname"
+                  className="h-[44px] text-[#D5192F] outline-none caret-red-500 px-[20px] w-full rounded-md"
+                />
+                <input
+                  type="number"
+                  required
+                  name="phone"
+                  placeholder="Telephone"
+                  className="h-[44px] caret-red-500 outline-none text-[#D5192F]  px-[20px] w-full rounded-md"
+                />
+                <textarea
+                  type="text"
+                  required
+                  placeholder="Comments"
+                  name="comment"
+                  className="h-[175px] text-[#D5192F] caret-red-500 outline-none pt-[10px] px-[20px] w-full rounded-md"
+                />
+                <button
+                  className="bg-[#D5192F] text-white py-[10px] rounded-md"
+                  type="submit"
+                >
+                  Submit a request
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </footer>
     </>
   );
 };

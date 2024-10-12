@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
+import { useTranslation } from 'react-i18next';
+import "../i18n";
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -38,6 +40,7 @@ function a11yProps(index) {
 }
 
 export default function BasicTabs() {
+  const { t, i18n } = useTranslation();  // Move useTranslation hook here
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
@@ -46,9 +49,9 @@ export default function BasicTabs() {
 
   return (
     <Box sx={{ width: '100%', textAlign: 'center' }}>
-      <h2 style={{ textAlign: 'left', marginLeft: '10px', fontSize: "40px", fontWeight: "semibold" }}>Services</h2>
-      <div style={{ display: 'flex', alignItems: 'center', marginBottom: '20px' }}>
-        <div style={{ width: '40px', height: '5px', backgroundColor: 'red', marginLeft: "10px",  }}></div>
+      <h2 style={{ textAlign: 'left', marginLeft: '10px', fontSize: "40px", fontWeight: "semibold" }}>{t("services")}</h2>
+      <div style={{ display: 'flex', alignItems: 'center', marginBottom: '20px', }}>
+        <div style={{ width: '40px', height: '5px', backgroundColor: 'red', marginLeft: "10px", }}></div>
       </div>
 
       <Box>
@@ -59,6 +62,7 @@ export default function BasicTabs() {
           TabIndicatorProps={{
             style: {
               backgroundColor: 'transparent',
+              color: "white"
             },
           }}
           sx={{
@@ -68,46 +72,45 @@ export default function BasicTabs() {
               backgroundColor: '#1d1d1d',
               margin: '0 5px',
               width: '190px', 
-              height: '!40px', 
+              height: '40px', 
               padding: "0px",
               borderRadius: '4px',
             },
             '& .Mui-selected': {
               backgroundColor: 'red',
-              color: '#fff',
+              color: "white"
             },
           }}
         >
-          <Tab label="Visa Consultations" {...a11yProps(0)} />
-          <Tab label="Business Visas" {...a11yProps(1)} />
-          <Tab label="Document Preparation" {...a11yProps(2)} />
-          <Tab label="Tour Packages" {...a11yProps(3)} />
-          <Tab label="Insurance" {...a11yProps(4)} />
-          <Tab label="Insurance" {...a11yProps(5)} />
+          <Tab label={t("Visa Consultations")} className='!text-[white]' {...a11yProps(0)} />
+          <Tab label={t("Tourist Visas")} className='!text-[white]' {...a11yProps(1)} />
+          <Tab label={t("Business Visas")} className='!text-[white]' {...a11yProps(2)} />
+          <Tab label={t("Document Preparation")} className='!text-[white]' {...a11yProps(3)} />
+          <Tab label={t("Tour Packages")} className='!text-[white]' {...a11yProps(4)} />
+          <Tab label={t("Insurance")} className='!text-[white]' {...a11yProps(5)} />
         </Tabs>
           <div className='w-[4px] mt-[15px] ml-[40px] h-[40px] bg-red-600'></div>
       </Box>
 
-      {/* Tab Panels */}
       <div className='text-start ml-[20px] text-[18px] font-semibold'>
-      <CustomTabPanel value={value} index={0}>
-      EASY VISA CONSULTING specialists provide detailed consultations on visa applications for countries such as Schengen, Canada, the USA, the United Kingdom, Japan, and Korea. We explain all the nuances of document submission and help you prepare for the process.
-      </CustomTabPanel>
-      <CustomTabPanel value={value} index={1}>
-      We assist in obtaining tourist visas for comfortable travel to popular countries, including Europe, North America, and Asia. Our experts provide full support at every stage.
-      </CustomTabPanel>
-      <CustomTabPanel value={value} index={2}>
-      For business trips, EASY VISA CONSULTING offers comprehensive solutions for visa applications to the world's leading countries. We ensure a fast and professional document submission process.
-      </CustomTabPanel>
-      <CustomTabPanel value={value} index={3}>
-      We carefully check all your documents to ensure they meet the requirements of visa centers. We also assist in gathering the necessary certificates and extracts for a successful visa acquisition.
-      </CustomTabPanel>
-      <CustomTabPanel value={value} index={4}>
-      We offer the selection of optimal tourist packages, including trip organization, hotel reservations, and excursions, to make your vacation as comfortable as possible.
-      </CustomTabPanel>
-      <CustomTabPanel value={value} index={5}>
-      We arrange travel insurance that will protect you and your loved ones during your trip, ensuring safety and confidence in any situation start with we.
-      </CustomTabPanel>
+        <CustomTabPanel value={value} index={0}>
+          {t("Services-text1")}
+        </CustomTabPanel>
+        <CustomTabPanel value={value} index={1}>
+          {t("Services-text2")}
+        </CustomTabPanel>
+        <CustomTabPanel value={value} index={2}>
+          {t("Services-text3")}
+        </CustomTabPanel>
+        <CustomTabPanel value={value} index={3}>
+          {t("Services-text4")}
+        </CustomTabPanel>
+        <CustomTabPanel value={value} index={4}>
+          {t("Services-text5")}
+        </CustomTabPanel>
+        <CustomTabPanel value={value} index={5}>
+          {t("Services-text6")}
+        </CustomTabPanel>
       </div>
     </Box>
   );
