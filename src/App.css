@@ -84,3 +84,63 @@ input::-webkit-inner-spin-button {
   color: red !important;
   font-weight: 800;
 }
+
+@media only screen and (max-width: 630px) {
+  .hero-swiper {
+    padding: 0 15px;
+  }
+  .hero-text {
+    font-size: 35px;
+  }
+  .header-img {
+    width: 55px;
+    height: 45px;
+  }
+  .header-select{
+    padding: 0px;
+  }
+  .about_modal {
+    display: block;
+    font-size: 22px;
+    color: red;
+  }
+  .pri-text{
+    line-clamp: 3;
+  }
+  .contact-mobile{
+    padding-left: 20px;
+  }
+  .contact-map{
+    padding: 0 10px;
+  }
+  
+}
+@media only screen and (max-width: 860px) {
+  .background {
+    background-size: 100%;
+  }
+  .times {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 860px) {
+  .demo {
+    display: none;
+  }
+  .demo-mobile {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 1018px) {
+  .about-red {
+    top: 120px;
+  }
+  .about-logo{
+    display: none;
+  }
+  .excursion-logo{
+    display: none;
+  }
+}

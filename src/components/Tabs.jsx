@@ -40,7 +40,7 @@ function a11yProps(index) {
 }
 
 export default function BasicTabs() {
-  const { t, i18n } = useTranslation();  // Move useTranslation hook here
+  const { t } = useTranslation();  
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
@@ -49,9 +49,11 @@ export default function BasicTabs() {
 
   return (
     <Box sx={{ width: '100%', textAlign: 'center' }}>
-      <h2 style={{ textAlign: 'left', marginLeft: '10px', fontSize: "40px", fontWeight: "semibold" }}>{t("services")}</h2>
-      <div style={{ display: 'flex', alignItems: 'center', marginBottom: '20px', }}>
-        <div style={{ width: '40px', height: '5px', backgroundColor: 'red', marginLeft: "10px", }}></div>
+      <h2 style={{ textAlign: 'left', marginLeft: '10px', fontSize: "30px", fontWeight: "semibold" }}>
+        {t("services")}
+      </h2>
+      <div style={{ display: 'flex', alignItems: 'center', marginBottom: '20px' }}>
+        <div style={{ width: '40px', height: '5px', backgroundColor: 'red', marginLeft: "10px" }}></div>
       </div>
 
       <Box>
@@ -71,7 +73,7 @@ export default function BasicTabs() {
               color: '#fff',
               backgroundColor: '#1d1d1d',
               margin: '0 5px',
-              width: '190px', 
+              width: { xs: '100%', sm: '190px' },  // Full width on small screens
               height: '40px', 
               padding: "0px",
               borderRadius: '4px',
@@ -81,18 +83,20 @@ export default function BasicTabs() {
               color: "white"
             },
           }}
+          variant="scrollable"  // Enables horizontal scrolling for tabs
+          scrollButtons="auto"  // Automatically shows scroll buttons
         >
-          <Tab label={t("Visa Consultations")} className='!text-[white]' {...a11yProps(0)} />
-          <Tab label={t("Tourist Visas")} className='!text-[white]' {...a11yProps(1)} />
-          <Tab label={t("Business Visas")} className='!text-[white]' {...a11yProps(2)} />
-          <Tab label={t("Document Preparation")} className='!text-[white]' {...a11yProps(3)} />
-          <Tab label={t("Tour Packages")} className='!text-[white]' {...a11yProps(4)} />
-          <Tab label={t("Insurance")} className='!text-[white]' {...a11yProps(5)} />
+          <Tab label={t("Visa Consultations")} {...a11yProps(0)} />
+          <Tab label={t("Tourist Visas")} {...a11yProps(1)} />
+          <Tab label={t("Business Visas")} {...a11yProps(2)} />
+          <Tab label={t("Document Preparation")} {...a11yProps(3)} />
+          <Tab label={t("Tour Packages")} {...a11yProps(4)} />
+          <Tab label={t("Insurance")} {...a11yProps(5)} />
         </Tabs>
-          <div className='w-[4px] mt-[15px] ml-[40px] h-[40px] bg-red-600'></div>
+        <div className='w-[4px] mt-[15px] ml-[40px] h-[40px] bg-red-600'></div>
       </Box>
 
-      <div className='text-start ml-[20px] text-[18px] font-semibold'>
+      <div className='text-start ml-[20px] text-[16px] md:text-[18px] font-semibold'>
         <CustomTabPanel value={value} index={0}>
           {t("Services-text1")}
         </CustomTabPanel>

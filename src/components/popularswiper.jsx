@@ -32,7 +32,7 @@ const SwiperDemo = () => {
   }, []);
   
   return (
-    <div className="w-[1300px] mt-[26px] h-[100px] ">
+    <div className="max-w-[1300px] mt-[26px] h-[100px] ">
       <Swiper
         modules={[Navigation]}
         slidesPerView={3}
@@ -44,13 +44,13 @@ const SwiperDemo = () => {
         className="swiper-container"
         >
           <SwiperSlide
-            className="flex justify-center !w-[430px] items-center  ml-[95px]"
+            className="flex justify-center !max-w-[430px] items-center  ml-[95px]"
             >
             <img src={Popular1} alt="popular1" className='w-[240px] h-[220px] rounded-[15px]'/>
             <p className='ml-[60px] mt-[10px]'>{t('Sharm El-Sheyx')}</p>
           </SwiperSlide>
           <SwiperSlide
-            className="flex justify-center !w-[430px] items-center"
+            className="flex justify-center !max-w-[430px] items-center"
             >
             <img src={Popular2} alt="popular2" className='w-[240px] h-[220px] rounded-[15px]'/>
             <p className='ml-[100px] mt-[10px]'>{t("Dubay")}</p>
@@ -87,8 +87,8 @@ const SwiperDemo = () => {
           </SwiperSlide>
       </Swiper>
       <div className='w-[1300px] mx-auto'>
-      <div className="swiper-button-next text-black right-5 md:right-10 transform md:rotate-0 rotate-90 pt-[700px] pr-[100px]"></div>
-      <div className="swiper-button-prev text-black left-5 md:left-10 transform md:rotate-0 rotate-90 pt-[700px] pl-[100px]"></div>
+      <div className="swiper-button-next text-black right-5 md:right-10 transform md:rotate-0 rotate-90 pt-[700px] "></div>
+      <div className="swiper-button-prev text-black absolute left-5 md:left-10 transform md:rotate-0 rotate-90 pt-[700px]"></div>
       </div>
     </div>
 
