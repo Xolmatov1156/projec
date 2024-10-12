@@ -433,7 +433,7 @@ const Home = () => {
         </section>
       </main>
       <footer id="contact" className="w-screen h-auto bg-black pt-[50px]">
-  <div className="w-full max-w-[1300px] mx-auto flex flex-col md:flex-row gap-[20px] md:gap-[85px] pb-[50px]">
+  <div className="w-full max-w-[1300px] mx-auto flex flex-col lg:flex-row gap-[20px] md:gap-[85px] pb-[50px]">
     <div className="flex flex-col text-white md:flex-1 contact-mobile">
       <div data-aos="fade-right" className="flex flex-col relative">
         <h2 className="text-[36px] md:text-[48px] font-semibold">{t("contact")}</h2>

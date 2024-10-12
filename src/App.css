@@ -143,4 +143,10 @@ input::-webkit-inner-spin-button {
   .excursion-logo{
     display: none;
   }
+  .contact-map {
+    padding: 0 20px;
+  }
+  .contact-mobile {
+    padding-left: 50px;
+  }
 }

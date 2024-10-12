@@ -83,15 +83,15 @@ export default function BasicTabs() {
               color: "white"
             },
           }}
-          variant="scrollable"  // Enables horizontal scrolling for tabs
-          scrollButtons="auto"  // Automatically shows scroll buttons
+          variant="scrollable"
+          scrollButtons="auto" 
         >
-          <Tab label={t("Visa Consultations")} {...a11yProps(0)} />
-          <Tab label={t("Tourist Visas")} {...a11yProps(1)} />
-          <Tab label={t("Business Visas")} {...a11yProps(2)} />
-          <Tab label={t("Document Preparation")} {...a11yProps(3)} />
-          <Tab label={t("Tour Packages")} {...a11yProps(4)} />
-          <Tab label={t("Insurance")} {...a11yProps(5)} />
+          <Tab label={t("Visa Consultations")} className='!text-white' {...a11yProps(0)} />
+          <Tab label={t("Tourist Visas")} className='!text-white' {...a11yProps(1)} />
+          <Tab label={t("Business Visas")} className='!text-white' {...a11yProps(2)} />
+          <Tab label={t("Document Preparation")} className='!text-white' {...a11yProps(3)} />
+          <Tab label={t("Tour Packages")} className='!text-white' {...a11yProps(4)} />
+          <Tab label={t("Insurance")} className='!text-white' {...a11yProps(5)} />
         </Tabs>
         <div className='w-[4px] mt-[15px] ml-[40px] h-[40px] bg-red-600'></div>
       </Box>
